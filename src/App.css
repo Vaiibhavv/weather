@@ -1,40 +1,31 @@
 body
 {
-    background: url("./images/background.jpg");
+    background: url("./images/city.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
 }
+
 .container
 {
-    display: flex;
-    padding: 4rem;
-    flex-wrap:wrap-reverse;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
-}
-.locationdata
-{
-    /* margin:4rem 9rem 9rem 9rem; */
-    border: 2px solid wheat;
-    width: 100%;
-    max-width: 50%;
-    height: 70vh;
-    color:white;
-    position: relative;  
-    padding: 5px;
-}
-#first
-{
-    background:url("./images/city8.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
-    opacity: 0.9;
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  padding-top: 8rem;
+  
 }
 
+.one 
+{
+  border: 2px solid white;
+  width: 100%;
+  max-width: 56%;
+  box-sizing: border-box;
+  height: 55vh;
+  position: relative;
+
+}
 .time
 {
     float:left;
@@ -42,15 +33,14 @@ body
     bottom: 2rem;
     left: 1rem;
 }
+
 .date
 {
     float:left;
     position: absolute;
     bottom: 0.8rem;
     left: 1rem;
-
 }
-
 .location
 {
     float:right;
@@ -66,47 +56,28 @@ body
     right: 4.1rem;
 }
 
-#second
+.anime
 {
-    background:url("./images/city4.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
-    opacity: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  margin-left: 16rem;
+}
+#searchInput
+{
+    font-size: 14px;
 }
 #btn
 {
     cursor: pointer;
-    padding: 0%;
-    height: 4vh;
-    width:4vw ;
     border: 1px solid wheat;
     border-radius: 3px;
     background-color: black;
     color: white;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 #btn:hover
 {
-    background-color: rgb(183, 183, 245);
-    color: black;
-    border: 2px solid black;
-}
-
-#searchInput
-{
-    padding: 0px;
-    height:4vh;
-    width: 11vw;
-    margin-left: 4rem;
-    margin-right: 1rem;
-    font-size: 11px;
+    background-color: rgb(69, 67, 67);
+    border: 1px solid rgb(246, 244, 244);
 }
 
 .ull
@@ -117,110 +88,131 @@ body
     flex-wrap: wrap; 
     color: whitesmoke;
     margin-top: 1rem;
+    align-items: center;
 }
 
 .listContain
 {
     border: 2px solid white;
     border-radius: 5px;
-    width: 30vw;
-    height: 25vh;
-    font-size: 11px;
-    background-color:rgb(19, 18, 18);
+    width: 20vw;
+    height: 16vh;
+    font-size: 14px;
     margin-top: 1rem;
-    
-    
+    margin-left: 9rem;
+    background-color: rgb(66, 64, 64);    
 }
 
-.ulList
+@media (max-width:768px)
 {
-    margin-right: 10px;
-    margin-bottom: 0.6rem;
-    
+  .listContain
+{
+    width: 27vw;
+    font-size: 11px; 
+    margin-left: 5rem;  
+    box-sizing: border-box;
+    height: 15vh;
+    margin-top: 1rem;
+    word-spacing: 5px;
+    padding-top: 1rem;
 }
-.search-icon {
-    position: absolute;
-    top: 33vh;
-    right: 150px;
-    transform: translateY(-50%);
-    color: gray;
-    font-size: 0.8rem;
-    cursor: pointer;
-    opacity: 0.7;
-    cursor:pointer;
+ .ull
+ {
+  margin: 0px;
+  padding-left: 6px;
+ }
+ .anime
+  {
+    margin-left: 8rem;
+  }
+  
+  .ulList
+  {
+    margin-left: 2px;
+  }
+}
+
+@media (min-width:1024px)
+{
+  .listContain
+  {
+      width: 27vw;
+      font-size: 11px; 
+      margin-left: 7rem;  
+      box-sizing: border-box;
+      height: 17vh;
+      margin-top: 1rem;
+      word-spacing: 3px;
+      font-size: 13px;
+  }
+  .ull
+ {
+   padding: 2px;
+ }
+ .ulList
+  {
+    margin-left: 2px;
+  }
+  .anime
+  {
+    margin-left: 14rem;
+  }
+}
+
+@media (max-width:468px)
+{
+  .listContain
+  {
+      width: 35vw;
+      margin-left: 2rem;
+      height: 19vh;
+      font-size:9px
+  }
+  body 
+  {
+    box-sizing: border-box;
     
   }
-  .search-icon.disabled {
-    /* Styles for disabled state */
-    opacity: 0.5;
-    pointer-events: none;
-    cursor: not-allowed;
+   
+  #searchInput
+{
+    font-size: 10px;
+}
+#btn
+{
+    cursor: pointer;
+    border: 1px solid wheat;
+    border-radius: 3px;
+    background-color: black;
+    color: white;
+    font-size: 10px;
+}
+ .one{
+  height: 60vh;
+}
+.ulList
+ {
+   margin-left: 3px;
+ }
+ .anime
+  {
+    margin-left: 3rem;
+    font-size:10px;
   }
 
-  @media screen and (max-width: 768px) {
-    /* Styles for tablets and mobile devices */
-    .container {
-      padding: 2rem;
-    }
+   .container
+   {
+    font-size: 9px;
+    box-sizing: border-box;
+   }
+   
+   .location
+   {
+    right: 3px;
+   }
+   #temp
+   {
+    right: 3px;
+   }
   
-    .locationdata {
-      height: auto;
-    }
-  
-    .location,
-    #temp {
-      position: static;
-      float: none;
-    }
-  
-    .location,
-    .time,
-    .date {
-      text-align: center;
-    }
-  
-    .listContain {
-      max-width: none;
-    }
-  }
-
-  @media screen and (max-width: 480px ) {
-    /* Styles for mobile devices */
-    .container {
-      padding: 1rem;
-    }
-  
-    .locationdata {
-      height: auto;
-    }
-  
-    .location,
-    #temp,
-    .time,
-    .date {
-      position: static;
-      float: none;
-      text-align: center;
-    }
-  
-    #btn {
-      width: 100%;
-    }
-  
-    #searchInput {
-      width: 100%;
-      margin-left: 0;
-      margin-right: 0;
-      margin-bottom: 1rem;
-    }
-  
-    .search-icon {
-      top: auto;
-      right: auto;
-      bottom: -2rem;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-  }
-  
-
+}

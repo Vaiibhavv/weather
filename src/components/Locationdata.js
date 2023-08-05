@@ -23,7 +23,7 @@ export default function Locationdata(props) {
   const [visibility, setVisibility] = useState(0);
   const [wicon, setWicon] = useState(null);
 
-  const [searchTerm, setSearch] = useState("");  // use for search city
+  const [searchTerm, setSearch] = useState(""); // use for search city
   // function is use to decide, which icon should be display as per the weather condition
   const switchFunc = (weather) => {
     switch (weather) {
@@ -293,92 +293,82 @@ export default function Locationdata(props) {
 
   return (
     <>
-      {userLocation ? (
-        <div className="container">
-          <div className="locationdata" id="first">
-            <div className="location">
-              <h5>
-                {city} <sub>{country}</sub>
-              </h5>
-            </div>
-            <div id="temp">
-              <h5>{tempc}°C</h5>
-            </div>
+      <div className="container">
+        {userLocation ? (<div className="one">
+          <div className="time">
+            <h5>{currentTime.toLocaleTimeString()}</h5>
+          </div>
+          <div className="date">
+            <h6>
+              {dayList[currentDate.getDay()]} {currentDate.getDate()}{" "}
+              {monthList[currentDate.getMonth()]}
+            </h6>
+          </div>
 
-            <div className="time">
-              <h5>{currentTime.toLocaleTimeString()}</h5>
-            </div>
-            <div className="date">
-              <h6>
-                {dayList[currentDate.getDay()]} {currentDate.getDate()}{" "}
-                {monthList[currentDate.getMonth()]}
-              </h6>
-            </div>
+          <div className="location">
+            <h5>
+              {city} <sub>{country}</sub>
+            </h5>
           </div>
-          <div className="locationdata" id="second">
-            <div className="anime">
-              <AnimatedWeather
-                icon={icon}
-                color={"white"}
-                size={70}
-                animate={true}
-              />
-              <h5>
-                {weather}
-                {wicon}
-              </h5>
-            </div>
-            <div className="searCity">
-              <input
-                className="search-box"
-                id="searchInput"
-                type="text"
-                name=""
-                value={searchTerm}
-                placeholder="Search city"
-                onChange={handleChange}
-              />
-              <span
-                className={`search-icon ${
-                  searchTerm.length === 0 ? "disabled" : ""
-                }`}
-                onClick={handleSearch}
-              >
-                &#128269;
-              </span>
-              <button
-                id="btn"
-                type="submit"
-                onClick={handleSearch}
-                disabled={searchTerm.length === 0}
-              >
-                Search
-              </button>
-            </div>
-            <div className="listContain">
-              <ul className="ull">
-                <li className="ulList">
-                  City: {changeCity ? changeCity : city}{" "}
-                  <sub>{changeCountry ? changeCountry : country}</sub>
-                </li>
-                <li className="ulList">
-                  Temp: {changeTempc ? changeTempc : tempc}°C
-                </li>
-                <li className="ulList">Max Temp: {tempmax}°C </li>
-                <li className="ulList">Min Temp: {tempmin}°C</li>
-                <li className="ulList">Temp Farh: {tempf}°F</li>
-                <li className="ulList">Humidity: {humidity}%</li>
-                <li className="ulList">Pressure: {pressure} pas</li>
-                <li className="ulList">Wind Speed: {windSpeed}km/h</li>
-                <li className="ulList">Visibility: {visibility}mi</li>
-              </ul>
-            </div>
-            <div></div>
+          <div id="temp">
+            <h5>{tempc}°C</h5>
           </div>
-        </div>
-      ) : (
-        <div>Loading user location...</div>
-      )}
+
+          <div className="anime">
+            <AnimatedWeather
+              icon={icon}
+              color={"white"}
+              size={70}
+              animate={true}
+            />
+            <h5>
+              {weather}
+              {wicon}
+            </h5>
+          </div>
+
+          <div className="searCity text-center">
+            <input
+              className="search-box"
+              id="searchInput"
+              type="text"
+              name=""
+              value={searchTerm}
+              placeholder="Search city"
+              onChange={handleChange}
+            />
+            <button
+              className="mx-2"
+              id="btn"
+              type="submit"
+              onClick={handleSearch}
+              disabled={searchTerm.length === 0}
+            >
+              Search
+            </button>
+          </div>
+          <div className="listContain ">
+            <ul className="ull">
+              <li className="ulList">
+                City: {changeCity ? changeCity : city}{" "}
+                <sub>{changeCountry ? changeCountry : country}</sub>
+              </li>
+              <li className="ulList">
+                Temp: {changeTempc ? changeTempc : tempc}°C
+              </li>
+              <li className="ulList">Max Temp: {tempmax}°C </li>
+              <li className="ulList">Min Temp: {tempmin}°C</li>
+              <li className="ulList">Temp Farh: {tempf}°F</li>
+              <li className="ulList">Humidity: {humidity}%</li>
+              <li className="ulList">Pressure: {pressure} pas</li>
+              <li className="ulList">Wind Speed: {windSpeed}km/h</li>
+              <li className="ulList">Visibility: {visibility}mi</li>
+            </ul>
+          </div>
+        </div>):(<div>
+          <h1 className="container my-5 text-center">User location not found</h1>
+        </div>)}
+      </div>
     </>
   );
 }
