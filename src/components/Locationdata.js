@@ -253,8 +253,8 @@ export default function Locationdata(props) {
     let lat = data[0].lat;
     console.log("lat", lat);
     let lon = data[0].lon;
-
-    if (searchvalue === data[0].name) {
+    searchvalue= searchvalue.trim();
+    if (searchvalue=== data[0].name) {
       const searchUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=edd469146324e4538ce7f85680b2048c`;
       let search = await fetch(searchUrl);
       let searchResponse = await search.json();
@@ -322,8 +322,7 @@ export default function Locationdata(props) {
               animate={true}
             />
             <h5>
-              {weather}
-              {wicon}
+              {weather} {wicon}
             </h5>
           </div>
 
@@ -366,7 +365,7 @@ export default function Locationdata(props) {
             </ul>
           </div>
         </div>):(<div>
-          <h1 className="container my-5 text-center">User location not found</h1>
+          <h1 className="container my-5 text-center location-not">User location not found, Please Turn on your location</h1>
         </div>)}
       </div>
     </>

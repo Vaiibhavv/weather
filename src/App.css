@@ -24,6 +24,7 @@ body
   box-sizing: border-box;
   height: 55vh;
   position: relative;
+  padding-top: 1rem;
 
 }
 .time
@@ -103,6 +104,13 @@ body
     background-color: rgb(66, 64, 64);    
 }
 
+.location-not
+{
+  font-size: 40px;
+  color: rgb(245, 245, 194);
+  font-weight: bolder;
+}
+
 @media (max-width:768px)
 {
   .listContain
@@ -147,11 +155,11 @@ body
   }
   .ull
  {
-   padding: 2px;
+   padding-left: 2px;
  }
  .ulList
   {
-    margin-left: 2px;
+    margin-left: 0.8rem;
   }
   .anime
   {
@@ -216,3 +224,47 @@ body
    }
   
 }
+
+@media (max-width:400px)
+{
+  .container
+{
+  padding-top:2rem;
+  
+}
+
+.one 
+{
+  border: 1px solid whitesmoke;
+  width: 100%;
+  max-width: 90%;
+  box-sizing: border-box;
+  height: 60vh;
+  padding-top: 2rem;
+
+}
+
+.anime
+  {
+    margin-left: 6rem;
+  }
+  .location
+   {
+    right: 2rem;
+    padding-top: 2rem;
+   }
+   #temp
+   {
+    right: 2rem;
+    padding-top: 2rem;
+   }
+
+   .listContain
+  {
+      width: 60%;
+      margin-left: 4rem;
+      height: 18vh;
+      font-size:10px
+  }
+}
+
